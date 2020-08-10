@@ -1,0 +1,66 @@
+{
+	"name": "terminal-sync",
+	"displayName": "Terminal Sync",
+	"description": "Synchronize current terminal with the active document folder",
+	"publisher": "maciejdems",
+	"license": "MIT",
+	"icon": "images/icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/macdems/vscode-terminal-sync.git"
+	},
+	"version": "1.0.0",
+	"engines": {
+		"vscode": "^1.47.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"configuration": {
+			"title": "Terminal Sync",
+			"properties": {
+				"terminalSync.sendCtrl+U": {
+					"type": "boolean",
+					"default": true
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "terminal-sync.syncActiveTerminal",
+				"title": "Sync Terminal with Active Document"
+			}
+		]
+	},
+	"activationEvents": [
+		"onCommand:terminal-sync.syncActiveTerminal"
+	],
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"test": "node ./out/test/runTest.js",
+		"package": "vsce package",
+		"publish": "vsce publish"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.47.0",
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.0",
+		"eslint": "^6.8.0",
+		"@typescript-eslint/parser": "^2.30.0",
+		"@typescript-eslint/eslint-plugin": "^2.30.0",
+		"glob": "^7.1.6",
+		"mocha": "^7.1.2",
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.3.0"
+	},
+	"dependencies": {
+		"path": "^0.12.7"
+	}
+}
