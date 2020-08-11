@@ -9,7 +9,7 @@
 		"type": "git",
 		"url": "https://github.com/macdems/vscode-terminal-sync.git"
 	},
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"engines": {
 		"vscode": "^1.47.0"
 	},
@@ -21,9 +21,15 @@
 		"configuration": {
 			"title": "Terminal Sync",
 			"properties": {
+				"terminalSync.followActiveEditor": {
+					"type": "boolean",
+					"default": false,
+					"description": "Controls whether the current director follows the active editor."
+				},
 				"terminalSync.sendCtrl+U": {
 					"type": "boolean",
-					"default": true
+					"default": true,
+					"markdownDescription": "Controls whether Terminal Sync send `Ctrl+U` key sequence first, to clear any text present in the command line."
 				}
 			}
 		},
@@ -35,7 +41,7 @@
 		]
 	},
 	"activationEvents": [
-		"onCommand:terminal-sync.syncActiveTerminal"
+		"*"
 	],
 	"scripts": {
 		"vscode:prepublish": "npm run compile",

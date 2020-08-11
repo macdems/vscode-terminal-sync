@@ -6,6 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## 2.0.0
+
+- Automatically follow active editor change.
+
 ## 1.0.0
 
-- Initial release
+- Initial release.

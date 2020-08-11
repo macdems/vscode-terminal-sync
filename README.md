@@ -14,25 +14,20 @@ Press `Shift+Ctrl+P` and select `Sync Terminal with Active Document`. The extens
 
 If you want, you can assign a keybinding of your choice to this command with `Preferences: Open Keyboard Shortcuts`.
 
-<!-- ## Features
+You may also set the `terminalSync.followActiveEditor` configuration option to `true` to automatically follow the active editor. However, you should use it with case, as the extension has no way of knowing if the current process in the terminal is a shell or something else.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow. -->
+![Demo](images/demo2.gif)
 
 ## Extension Settings
 
 This extension contributes the following setting:
 
+* `terminalSync.followActiveEditor`: automatically change directory in the terminal when the active editor changes
 * `terminalSync.sendCtrl+U`: send `ctrl+U`  keycode to clear the current line
 
-<!-- ## Known Issues
+## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension. -->
+The extension simply sends `cd ...` command to the terminal. It does not check if the current process is a shell or anything else.
 
 ## Release Notes
 
