@@ -23,7 +23,7 @@ You may also set the `terminalSync.followActiveEditor` configuration option to `
 This extension contributes the following setting:
 
 * `terminalSync.followActiveEditor`: automatically change directory in the terminal when the active editor changes
-* `terminalSync.sendCtrl+U`: send `ctrl+U`  keycode to clear the current line
+* `terminalSync.lineClearKey`: key sent to the terminal to clear the content of the current line
 
 ## Known Issues
 

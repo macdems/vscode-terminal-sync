@@ -8,6 +8,13 @@ export function activate(context: vscode.ExtensionContext) {
 
 export function deactivate() {}
 
+const CLEAR_CODES: {[key: string]: string} = {
+    "": "",
+    "Ctrl+U": "\x15",
+    "Ctrl+A Ctrl+H": "\x01\x08",
+    "Ctrl+C": "\x03",
+};
+
 function followEditorChange() {
     if (vscode.workspace.getConfiguration("terminalSync").get("followActiveEditor", false)) {
         changeDirectory();
@@ -19,7 +26,9 @@ function changeDirectory() {
     const terminal = vscode.window.activeTerminal;
 
     if (uri && terminal) {
-        const ctrlU = vscode.workspace.getConfiguration("terminalSync").get("sendCtrl+U", true);
-        terminal.sendText(`${ctrlU ? "\x15" : ""} cd "${path.dirname(uri.fsPath)}"`, true);
+        let lineClearKey: string | undefined = vscode.workspace.getConfiguration("terminalSync").get("lineClearKey");
+        if (!lineClearKey) { lineClearKey = ""; }
+        const clear = CLEAR_CODES[lineClearKey];
+        terminal.sendText(`${clear} cd "${path.dirname(uri.fsPath)}"`, true);
     }
 }

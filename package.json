@@ -9,7 +9,7 @@
 		"type": "git",
 		"url": "https://github.com/macdems/vscode-terminal-sync.git"
 	},
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"engines": {
 		"vscode": "^1.47.0"
 	},
@@ -24,12 +24,23 @@
 				"terminalSync.followActiveEditor": {
 					"type": "boolean",
 					"default": false,
-					"description": "Controls whether the current director follows the active editor."
+					"description": "Controls whethcer the current director follows the active editor."
 				},
-				"terminalSync.sendCtrl+U": {
-					"type": "boolean",
-					"default": true,
-					"markdownDescription": "Controls whether Terminal Sync send `Ctrl+U` key sequence first, to clear any text present in the command line."
+				"terminalSync.lineClearKey": {
+					"type": "string",
+					"enum": [
+						"",
+						"Ctrl+U",
+						"Ctrl+A Ctrl+H",
+						"Ctrl+C"
+					],
+					"markdownEnumDescriptions": [
+						"Do not send any code to clear the current line",
+						"Always send `Ctrl+U` (should work in Linux and MacOS)",
+						"Always send `Ctrl+A Ctrl+H` (works in Powershell)",
+						"Always send `Ctrl+C` (should work everywhere, but leaves ugly artifacts)"
+					],
+					"markdownDescription": "Key sent to the terminal to clear the content of the current line"
 				}
 			}
 		},

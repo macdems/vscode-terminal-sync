@@ -6,6 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## 2.1.0
+
+- Key sequence to clear line can be selected in options.
+
 ## 2.0.0
 
 - Automatically follow active editor change.
