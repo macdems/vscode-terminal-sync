@@ -22,12 +22,13 @@ You may also set the `terminalSync.followActiveEditor` configuration option to `
 
 This extension contributes the following setting:
 
-* `terminalSync.followActiveEditor`: automatically change directory in the terminal when the active editor changes
-* `terminalSync.lineClearKey`: key sent to the terminal to clear the content of the current line
+* `terminalSync.followActiveEditor`: Automatically change directory in the terminal when the active editor changes.
+
+* `terminalSync.lineClearKey`: Key sent to the terminal to clear the content of the current line. By default, the extension sends `Ctrl+C`, which should work with any shell, however it leaves ugly artifacts in the terminal.
 
 ## Known Issues
 
-The extension simply sends `cd ...` command to the terminal. It does not check if the current process is a shell or anything else.
+The extension simply sends `cd...` command to the terminal. It does not check if the current process is a shell or anything else. For this reason setting `terminalSync.followActiveEditor` to `true` is not recommended.
 
 ## Release Notes
 

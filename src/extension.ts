@@ -9,8 +9,9 @@ export function activate(context: vscode.ExtensionContext) {
 export function deactivate() {}
 
 const CLEAR_CODES: {[key: string]: string} = {
-    "": "",
-    "Ctrl+U": "\x15",
+    "none": "",
+    "Ctrl+U": "\x05\x15", // `Ctrl+U` may have been left from the previous version
+    "Ctrl+E Ctrl+U": "\x05\x15",
     "Ctrl+A Ctrl+H": "\x01\x08",
     "Ctrl+C": "\x03",
 };
@@ -27,7 +28,7 @@ function changeDirectory() {
 
     if (uri && terminal) {
         let lineClearKey: string | undefined = vscode.workspace.getConfiguration("terminalSync").get("lineClearKey");
-        if (!lineClearKey) { lineClearKey = ""; }
+        if (!lineClearKey) { lineClearKey = "Ctrl+C"; }
         const clear = CLEAR_CODES[lineClearKey];
         terminal.sendText(`${clear} cd "${path.dirname(uri.fsPath)}"`, true);
     }

@@ -6,6 +6,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## 2.2.0
+
+- Change`Ctrl+U` to `Ctrl+E Ctrl+U` to ensure the whole line is cleared.
+- Send `Ctrl+C` by default.
+
 ## 2.1.0
 
 - Key sequence to clear line can be selected in options.
