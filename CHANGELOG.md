@@ -10,6 +10,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Change`Ctrl+U` to `Ctrl+E Ctrl+U` to ensure the whole line is cleared.
 - Send `Ctrl+C` by default.
+- Add default keybinding (`Alt+Shitf+S`).
 
 ## 2.1.0
 

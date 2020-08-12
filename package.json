@@ -50,7 +50,12 @@
 				"command": "terminal-sync.syncActiveTerminal",
 				"title": "Sync Terminal with Active Document"
 			}
-		]
+		],
+		"keybindings":{
+			"command": "terminal-sync.syncActiveTerminal",
+			"key": "Alt+Shift+S",
+			"when": "editorFocus"
+		}
 	},
 	"activationEvents": [
 		"onCommand:terminal-sync.syncActiveTerminal",
